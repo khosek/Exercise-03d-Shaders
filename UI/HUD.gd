@@ -25,6 +25,10 @@ func update_time():
 
 func update_fever():
 	$Fever.value = Global.fever
+	var stylebox = $Fever.get("custom_styles/fg")
+	stylebox.bg_color.h = fever_h
+	stylebox.bg_color.s = fever_s * (Global.fever / 100)
+	stylebox.bg_color.h = fever_v / 2 + ((Global.fever / 100) * fever_v / 2)
 
 func update_lives():
 	var indicator_pos = Vector2(indicator_margin.x, Global.VP.y - indicator_margin.y)
